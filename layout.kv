@@ -1,0 +1,28 @@
+<MyGridLayout>
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        Image:
+            source: 'giaodien/thaytien.jpg'
+            #allow_stretch: True
+            #keep_ratio: False
+
+        GridLayout:
+            rows: 3
+            padding: 50
+            spacing: 20
+
+            Button:
+                id: 1
+                text: 'sample1'
+                on_press: root.show_popup(self.text)
+            Button:
+                id: 2
+                text: 'sample2'
+                on_press: root.press(self.text)
+            Button:
+                id: 3
+                text: 'sample3'
+                on_press: root.press(self.text)
