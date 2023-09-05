@@ -5,11 +5,17 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-
+      # Reference a specific commit
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3
+      # Reference the major version of a release
+      - uses: actions/checkout@v3
+      # Reference a specific version
+      - uses: actions/checkout@v3.2.0
+      # Reference a branch
+      - uses: actions/checkout@main
       # used to cache dependencies with a timeout
       - name: Get Date
         id: get-date
@@ -33,7 +39,7 @@ jobs:
         id: buildozer
         with:
           command: buildozer android debug
-          buildozer_version: stable
+          buildozer_version: master
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
