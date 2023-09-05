@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: node16
+    container: node:16
 
     steps:
       # Reference a specific commit
